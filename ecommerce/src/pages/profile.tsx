@@ -3,6 +3,7 @@ import UpdateUser from "components/modals/UpdateUser";
 import { useEffect } from "react";
 import { useUser } from "src/hooks/useUser";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 function Profile(): JSX.Element {
   const { data, isLoading } = useUser();
@@ -25,6 +26,10 @@ function Profile(): JSX.Element {
 
   return (
     <Layout>
+      <Head>
+        <title>E-commerce - {data?.name}</title>
+        <meta property="og:title" content={`${data?.name}`} key="title" />
+      </Head>
       <div className="grid grid-cols-12 mt-10">
         <div className="col-start-3 col-span-4 p-4">
           <div className="text-left py-2">

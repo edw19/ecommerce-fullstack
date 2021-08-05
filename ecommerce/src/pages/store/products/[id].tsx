@@ -1,4 +1,4 @@
-import { request, gql } from "graphql-request";
+import { request } from "graphql-request";
 import { useRouter } from "next/router";
 import { useQuery } from "react-query";
 import Image from "next/image";
@@ -10,6 +10,7 @@ import { useShoppinCardDispatch } from "components/context/ShoppingCartProvider"
 import { ADD_PRODUCT_TO_SHOPPING_CART } from "components/context/ShoppingCartActions";
 import { GET_PRODUCT } from "src/graphql/queries";
 import { URI_GRAPHQL } from "src/graphql/constants";
+import Head from "next/head";
 
 async function fetcherGetProduct(id: string) {
   if (!id) return;
@@ -46,6 +47,10 @@ function Index(): JSX.Element {
 
   return (
     <Layout>
+      <Head>
+        <title>E-commerce - {data?.name}</title>
+        <meta property="og:title" content={`${data?.name}`} key="title" />
+      </Head>
       <div className="grid grid-cols-8">
         <div className="rounded-md col-start-2 col-span-4">
           <Image

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   DELETE_PRODUCTS_FROM_SHOPPING_CART,
   DELETE_PRODUCTS_WITH_STOCK_ZERO,
@@ -11,11 +12,11 @@ import Layout from "components/Layout";
 import Image from "next/image";
 import { useUser } from "src/hooks/useUser";
 import Link from "next/link";
+import Head from "next/head";
 import { useMutation, useQueryClient } from "react-query";
 import { GraphQLClient } from "graphql-request";
 import { URI_GRAPHQL } from "src/graphql/constants";
 import { CREATE_BUY } from "src/graphql/mutations";
-import { useState } from "react";
 
 async function fetcherCreateBuy(variables) {
   const token = window.localStorage.getItem("access-token");
@@ -84,6 +85,10 @@ function Shopping(): JSX.Element {
 
   return (
     <Layout>
+      <Head>
+        <title>E-commerce - carrito de compras</title>
+        <meta property="og:title" content="E-commerce - carrito de compras" key="title" />
+      </Head>
       <h2 className="text-center text-2xl py-4 font-bold">
         Carrito de Compras
       </h2>

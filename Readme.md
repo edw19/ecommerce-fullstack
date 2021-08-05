@@ -7,10 +7,12 @@ La creación de la presente prueba técnica se adapto a los requisitos solicitad
 Mi solución al reto planteado consta de la creación de usuarios con diferentes roles.
 El primer usuario con el rol USER-ADMIN-STORE es el encargado de crear,
 actualizar y eliminar productos
+
     - Usuario: admin@admin.com
     - Password: asdasd
 
 El segundo usuario con el rol USER-CLIENT es el cliente de nuestro e-commerce
+
     - Usuario: client@client.com
     - Password: asdasd
 
@@ -37,7 +39,7 @@ los productos y usuarios que desee
     - NodeJs
     - Typescript
     - Graphql con Type-graphql y ExpressJS
-    - Mongoose con el ODM Mongoose
+    - MongoDb con el ODM @typegoose
 
 ## Tecnologías en FrontEnd
 

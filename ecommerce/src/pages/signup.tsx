@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { request } from "graphql-request";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import Head from "next/head";
 import { useMutation } from "react-query";
 import { URI_GRAPHQL } from "src/graphql/constants";
 import { SIGNUP } from "src/graphql/mutations";
@@ -68,8 +69,8 @@ function Signup(): JSX.Element {
     if (empty) {
       return alert("Debes llenar los campos para registrarte");
     }
-    if(password.length < 5){
-      return alert("aosdji")
+    if (password.length < 5) {
+      return alert("aosdji");
     }
     try {
       await mutate.mutateAsync(newUser);
@@ -83,6 +84,14 @@ function Signup(): JSX.Element {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
+      <Head>
+        <title>E-commerce - Registrarse</title>
+        <meta
+          property="og:title"
+          content="E-commerce - Registrarse"
+          key="title"
+        />
+      </Head>
       <div className="text-4xl flex flex-row justify-center py-3">
         <p>Registrarse en </p>
         <p className="transform -rotate-45 pr-3 pl-3">E </p>

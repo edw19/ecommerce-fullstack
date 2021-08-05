@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useMutation } from "react-query";
 import { request } from "graphql-request";
 import { SIGNIN } from "../graphql/mutations";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Head from "next/head";
 import { URI_GRAPHQL } from "src/graphql/constants";
 
 export interface IUser {
@@ -52,6 +53,14 @@ function Login(): JSX.Element {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
+      <Head>
+        <title>E-commerce - Iniciar sesión</title>
+        <meta
+          property="og:title"
+          content="E-commerce - Iniciar sesión"
+          key="title"
+        />
+      </Head>
       <form
         onSubmit={handlerLogin}
         action=""
