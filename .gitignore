@@ -1,0 +1,7 @@
+api-graphql/node_modules
+api-graphql/*.lock
+
+
+ecommerce/.next
+ecommerce/node_modules
+ecommerce/*.lock
