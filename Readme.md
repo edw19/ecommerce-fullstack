@@ -2,6 +2,8 @@
 
 La creación de la presente prueba técnica se adapto a los requisitos solicitados
 
+    - versión de node recomendada node@14.17.4 LTS
+
 ## Usuarios Creados
 
 Mi solución al reto planteado consta de la creación de usuarios con diferentes roles.
@@ -28,7 +30,7 @@ los productos y usuarios que desee
     2. cd api-graphql
     3. npm install
     4. npm run dev 
-    - Esto hara que el servidor este ejecutandose
+    - Esto hara que el servidor este ejecutandose en http://localhost:4000/graphql
     5. cd ecommerce
     6. npm install
     7. npm run dev
